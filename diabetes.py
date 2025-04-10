@@ -11,94 +11,94 @@ model = load_model()
 def show_recommendations(high_risk: bool):
     if high_risk:
         st.markdown('<div class="rec-box high-risk">', unsafe_allow_html=True)
-        st.markdown("### High-Risk Diabetes Recommendation Plan")
+        st.markdown("### **High-Risk Diabetes Recommendation Plan**")
         st.write("""
-        If you have a high risk of diabetes, immediate action is needed to prevent or manage the disease effectively.
+        For patients at **high risk** of diabetes, immediate intervention is crucial to prevent or manage the disease effectively.
         """)
- 
-        st.markdown("#### 1️⃣ Lifestyle Changes")
+
+        st.markdown("#### 1️⃣ **Lifestyle Changes**")
         st.write("""
-        - Establish a consistent daily routine for eating, sleeping, and exercising.
-        - Reduce stress levels through mindfulness techniques, meditation, or yoga.
-        - Quit smoking and excessive alcohol consumption, as both increase diabetes complications.
-        - Prioritize quality sleep (7–9 hours per night), as poor sleep can impact blood sugar levels.
+        - Encourage the patient to establish a **consistent daily routine** for eating, sleeping, and exercising.
+        - Recommend **stress reduction techniques** such as mindfulness, meditation, or yoga.
+        - Advise the patient to **quit smoking** and limit alcohol consumption to reduce complications.
+        - Emphasize the importance of **quality sleep** (7–9 hours per night) to stabilize blood sugar levels.
         """)
- 
-        st.markdown("#### 2️⃣ Diet & Nutrition")
+
+        st.markdown("#### 2️⃣ **Diet & Nutrition**")
         st.write("""
-        - Follow a low-carb, high-fiber diet to maintain stable blood sugar levels.
-        - Choose whole grains (brown rice, quinoa, whole wheat) over refined grains.
-        - Avoid sugary drinks (soda, fruit juices) and processed foods high in added sugars.
-        - Increase protein intake (lean meats, fish, eggs, beans) to support metabolism.
-        - Eat plenty of non-starchy vegetables (broccoli, spinach, peppers, cucumbers).
-        - Consume healthy fats (avocados, nuts, olive oil) instead of trans fats.
+        - Guide the patient to follow a **low-carb, high-fiber diet** to maintain stable blood sugar levels.
+        - Recommend **whole grains** (brown rice, quinoa, whole wheat) over refined grains.
+        - Advise avoiding **sugary drinks** (soda, fruit juices) and processed foods high in added sugars.
+        - Suggest increasing **protein intake** (lean meats, fish, eggs, beans) to support metabolism.
+        - Encourage consumption of **non-starchy vegetables** (broccoli, spinach, peppers, cucumbers).
+        - Recommend **healthy fats** (avocados, nuts, olive oil) instead of trans fats.
         """)
- 
-        st.markdown("#### 3️⃣ Exercise & Physical Activity")
+
+        st.markdown("#### 3️⃣ **Exercise & Physical Activity**")
         st.write("""
-        - Aim for 150 minutes of moderate-intensity exercise per week (e.g., brisk walking, cycling, swimming).
-        - Include resistance training (weight lifting, resistance bands) twice a week to improve insulin sensitivity.
-        - Engage in daily movement, such as taking stairs instead of elevators and walking after meals.
+        - Advise the patient to aim for **150 minutes of moderate-intensity exercise per week** (e.g., brisk walking, cycling, swimming).
+        - Include **resistance training** (weight lifting, resistance bands) twice a week to improve insulin sensitivity.
+        - Encourage **daily movement**, such as taking stairs instead of elevators and walking after meals.
         """)
- 
-        st.markdown("#### 4️⃣ Monitoring & Tracking")
+
+        st.markdown("#### 4️⃣ **Monitoring & Tracking**")
         st.write("""
-        - Check blood sugar levels regularly (as advised by a doctor).
-        - Monitor blood pressure and cholesterol to prevent cardiovascular complications.
-        - Keep track of weight and BMI, as excess weight increases diabetes risk.
-        - Log food intake and activity levels in a journal or app to stay accountable.
+        - Instruct the patient to **check blood sugar levels regularly** (as per your guidance).
+        - Monitor **blood pressure and cholesterol** to prevent cardiovascular complications.
+        - Track **weight and BMI**, as excess weight increases diabetes risk.
+        - Suggest logging **food intake and activity levels** in a journal or app for accountability.
         """)
- 
-        st.markdown("#### 5️⃣ Next Steps")
+
+        st.markdown("#### 5️⃣ **Next Steps**")
         st.write("""
-        - Schedule a doctor’s appointment for a comprehensive diabetes risk assessment.
-        - Get routine blood tests (A1C, fasting blood sugar, cholesterol, kidney function).
-        - Work with a nutritionist or dietitian to create a personalized meal plan.
-        - Join a support group or diabetes education program for guidance and motivation.
+        - Schedule **follow-up appointments** for a comprehensive diabetes risk assessment.
+        - Order routine blood tests (**A1C, fasting blood sugar, cholesterol, kidney function**).
+        - Collaborate with a **nutritionist or dietitian** to create a personalized meal plan for the patient.
+        - Recommend joining a **support group or diabetes education program** for additional guidance and motivation.
         """)
         st.markdown('</div>', unsafe_allow_html=True)
- 
+
     else:
         st.markdown('<div class="rec-box low-risk">', unsafe_allow_html=True)
-        st.markdown("### Low-Risk Diabetes Recommendation Plan")
+        st.markdown("### **Low-Risk Diabetes Recommendation Plan**")
         st.write("""
-        Even if you are not at high risk for diabetes, the goal is to maintain good health and prevent future risks.
+        For patients at **low risk** of diabetes, the focus should be on maintaining good health and preventing future risks.
         """)
- 
-        st.markdown("#### 1️⃣ Lifestyle Changes")
+
+        st.markdown("#### 1️⃣ **Lifestyle Changes**")
         st.write("""
-        - Maintain a healthy and active lifestyle with balanced meals and regular exercise.
-        - Manage stress effectively through relaxation techniques like deep breathing and hobbies.
-        - Continue good sleep habits to support overall well-being.
+        - Encourage the patient to maintain a **healthy and active lifestyle** with balanced meals and regular exercise.
+        - Suggest **stress management techniques** like relaxation exercises or engaging in hobbies.
+        - Reinforce the importance of **good sleep habits** to support overall well-being.
         """)
- 
-        st.markdown("#### 2️⃣ Diet & Nutrition")
+
+        st.markdown("#### 2️⃣ **Diet & Nutrition**")
         st.write("""
-        - Eat a balanced diet rich in fiber, lean proteins, and healthy fats.
-        - Avoid excess processed foods and sugary snacks to prevent insulin resistance.
-        - Stay hydrated by drinking at least 8 glasses of water daily.
-        - Consider portion control to maintain a healthy weight and prevent future risks.
+        - Recommend a **balanced diet** rich in fiber, lean proteins, and healthy fats.
+        - Advise avoiding **excess processed foods and sugary snacks** to prevent insulin resistance.
+        - Encourage staying **hydrated** by drinking at least 8 glasses of water daily.
+        - Suggest **portion control** to maintain a healthy weight and prevent future risks.
         """)
- 
-        st.markdown("#### 3️⃣ Exercise & Physical Activity")
+
+        st.markdown("#### 3️⃣ **Exercise & Physical Activity**")
         st.write("""
-        - Engage in at least 30 minutes of physical activity per day.
-        - Mix aerobic exercises (walking, running, swimming) with strength training.
-        - Practice flexibility and balance exercises (yoga, Pilates) to improve overall health.
+        - Advise the patient to engage in at least **30 minutes of physical activity per day**.
+        - Recommend mixing **aerobic exercises** (walking, running, swimming) with strength training.
+        - Suggest **flexibility and balance exercises** (yoga, Pilates) to improve overall health.
         """)
- 
-        st.markdown("#### 4️⃣ Monitoring & Tracking")
+
+        st.markdown("#### 4️⃣ **Monitoring & Tracking**")
         st.write("""
-        - Get an annual physical checkup to monitor blood sugar, cholesterol, and blood pressure.
-        - Check BMI and weight trends to avoid gradual unhealthy weight gain.
-        - Stay aware of any symptoms like excessive thirst, frequent urination, or fatigue, which could signal early diabetes signs.
+        - Recommend **annual physical checkups** to monitor blood sugar, cholesterol, and blood pressure.
+        - Advise tracking **BMI and weight trends** to avoid gradual unhealthy weight gain.
+        - Educate the patient to stay aware of symptoms like **excessive thirst, frequent urination, or fatigue**, which could signal early diabetes signs.
         """)
- 
-        st.markdown("#### 5️⃣ Next Steps")
+
+        st.markdown("#### 5️⃣ **Next Steps**")
         st.write("""
-        - Continue healthy habits and make small improvements where needed.
-        - Get routine blood sugar screenings (especially if there's a family history of diabetes).
-        - Keep learning about nutrition and fitness to stay proactive about health.
+        - Encourage the patient to continue **healthy habits** and make small improvements where needed.
+        - Suggest routine **blood sugar screenings** (especially if there's a family history of diabetes).
+        - Provide resources for learning about **nutrition and fitness** to stay proactive about health.
         """)
         st.markdown('</div>', unsafe_allow_html=True)
  
@@ -106,7 +106,7 @@ def show_recommendations(high_risk: bool):
 def show():
     st.title("🩺 Diabetes Risk Predictor")
  
-    st.markdown("Enter the following medical information to get your estimated risk of diabetes.")
+    st.markdown("Enter the following medical information to get patient's estimated risk of diabetes.")
  
     age = st.number_input("Age", min_value=0, max_value=120, step=1)
     pregnancies = st.number_input("Number of Pregnancies", min_value=0, max_value=20, step=1)
@@ -133,14 +133,14 @@ def show():
         prediction_score = int(prediction_proba * 100)
         high_risk = prediction_score >= 75
  
-        st.markdown("### Your Diabetes Risk Score:")
+        st.markdown("### Diabetes Risk Score:")
         st.metric(label="Score", value=str(prediction_score) + "%")
         st.progress(prediction_score)
  
         if high_risk:
-            st.markdown("<h4 style='color: red; text-align:center;'>You are at <strong>high risk</strong> for diabetes.</h3>", unsafe_allow_html=True)
+            st.markdown("<h4 style='color: red; text-align:center;'>Patient at <strong>high risk</strong> for diabetes.</h3>", unsafe_allow_html=True)
         else:
-            st.markdown("<h4 style='color: green; text-align:center;'>You are at <strong>low to medium risk</strong> for diabetes.</h3>", unsafe_allow_html=True)
+            st.markdown("<h4 style='color: green; text-align:center;'>Patient at <strong>low to medium risk</strong> for diabetes.</h3>", unsafe_allow_html=True)
  
         show_recommendations(high_risk)
  
