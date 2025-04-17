@@ -104,13 +104,19 @@ def show():
     st.title("🎗️ Breast Cancer Risk Predictor")
     st.markdown("Enter the following medical information to get your estimated risk of breast cancer.")
 
-    # Sidebar inputs for now (move if needed)
-    st.sidebar.subheader("Patient Info")
-    age = st.sidebar.number_input("Age", min_value=0, max_value=120, step=1)
+    mean_radius = st.number_input("Mean Radius", min_value=0.0, max_value=50.0, step=0.1)
+    mean_texture = st.number_input("Mean Texture", min_value=0.0, max_value=50.0, step=0.1)
+    mean_perimeter = st.number_input("Mean Perimeter", min_value=0.0, max_value=200.0, step=0.1)
+    mean_area = st.number_input("Mean Area", min_value=0.0, max_value=3000.0, step=1.0)
+    mean_smoothness = st.number_input("Mean Smoothness", min_value=0.0, max_value=1.0, step=0.0001, format="%.5f")
 
-    if st.sidebar.button("Predict Breast Cancer Risk"):
+    if st.button("Load Results"):
         input_data = pd.DataFrame([{
-            "Age": age,
+            "mean_radius": mean_radius,
+            "mean_texture": mean_texture,
+            "mean_perimeter": mean_perimeter,
+            "mean_area": mean_area,
+            "mean_smoothness": mean_smoothness
         }])
 
         # Predict using model
@@ -129,8 +135,6 @@ def show():
             st.markdown("<h4 style='color: green; text-align:center;'>Patient at <strong>low to medium risk</strong> for breast cancer.</h4>", unsafe_allow_html=True)
 
         show_recommendations(high_risk)
-    else:
-        st.info("Use the sidebar to input data and run prediction.")
 
 
 
