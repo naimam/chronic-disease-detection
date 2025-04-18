@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+from sklearn.preprocessing import OrdinalEncoder
 
 # Load kidney disease model
 @st.cache_resource
@@ -105,7 +106,23 @@ def show_recommendations(high_risk: bool):
 def show():
     st.title("🩺 Kidney Disease Risk Predictor")
     st.markdown("Enter the following medical information to get your estimated risk of kidney disease.")
+    
+    categories = [
+    ["normal", "abnormal"],      # rbc
+    ["normal", "abnormal"],      # pc
+    ["not present", "present"],  # pcc
+    ["not present", "present"],  # ba
+    ["no", "yes"],               # htn
+    ["no", "yes"],               # dm
+    ["no", "yes"],               # cad
+    ["poor", "good"],            # appet
+    ["no", "yes"],               # pe
+    ["no", "yes"]                # ane
+    ]
 
+    encoder = OrdinalEncoder(categories=categories)
+    encoder.fit([cat for cat in zip(*categories)]) 
+    
     # Numeric Inputs
     age = st.number_input("Age", min_value=1, max_value=100, step=1)
     bp = st.number_input("Blood Pressure (mm Hg)", min_value=50, max_value=180, step=1)
@@ -144,6 +161,7 @@ def show():
             st.error("Please select all categorical values (no 'Select...').")
         else:
             input_data = pd.DataFrame([{
+                "id": 0,
                 "age": age,
                 "bp": bp,
                 "sg": sg,
@@ -169,6 +187,9 @@ def show():
                 "pe": pe,
                 "ane": ane
             }])
+
+            categorical_cols = ["rbc", "pc", "pcc", "ba", "htn", "dm", "cad", "appet", "pe", "ane"]
+            input_data[categorical_cols] = encoder.transform(input_data[categorical_cols])
 
             # Get prediction score
             prediction_proba = model.predict_proba(input_data)[0][1]

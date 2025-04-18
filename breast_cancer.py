@@ -104,10 +104,10 @@ def show():
     st.title("🎗️ Breast Cancer Risk Predictor")
     st.markdown("Enter the following medical information to get your estimated risk of breast cancer.")
 
-    mean_radius = st.number_input("Mean Radius", min_value=0.0, max_value=50.0, step=0.1)
+    mean_radius = st.number_input("Mean Radius (mm)", min_value=0.0, max_value=50.0, step=0.1)
     mean_texture = st.number_input("Mean Texture", min_value=0.0, max_value=50.0, step=0.1)
-    mean_perimeter = st.number_input("Mean Perimeter", min_value=0.0, max_value=200.0, step=0.1)
-    mean_area = st.number_input("Mean Area", min_value=0.0, max_value=3000.0, step=1.0)
+    mean_perimeter = st.number_input("Mean Perimeter (mm)", min_value=0.0, max_value=200.0, step=0.1)
+    mean_area = st.number_input("Mean Area (mm^2)", min_value=0.0, max_value=3000.0, step=1.0)
     mean_smoothness = st.number_input("Mean Smoothness", min_value=0.0, max_value=1.0, step=0.0001, format="%.5f")
 
     if st.button("Load Results"):
